@@ -1,29 +1,12 @@
 
 document.addEventListener('scroll',()=>{
-    // 
 
-
-
-    // 
     const header = document.querySelector('header');
-    const Home =document.getElementById('Home');
-    const Services =document.getElementById('Services');
-    const About =document.getElementById('About');
-    const Pages =document.getElementById('Pages');
-    const Testimonials =document.getElementById('Testimonials');
-    
-  
 
-   
     if(window.screenY < 100){
         header.classList.add('scrolled');
-        // Services.classList.add('active');
-        // Home.classList.remove('active')
     }
-    else {
 
-        header.classList.remove('scrolled');
-    }
 });
 // dropdown
 
@@ -43,13 +26,23 @@ function dropdown1(){
 
 // get details
 function getDetails() {
-    let name=document.getElementById('name');
-    let email=document.getElementById('email');
-    let sub=document.getElementById('subject');
-    window.location="Demo.html"
-    console.log("Name :"+name.value);
-    console.log("Email :"+email.value);
-    console.log("Subject :"+sub.value);
+    let uname=document.getElementById('name').value;
+    let uemail=document.getElementById('email').value;
+    let usub=document.getElementById('subject').value;
+    let ureson=document.getElementById('pet-select').value;
+   
+  let userdate=[
+    {id:1,name:uname,email:uemail,sub:usub,reson:ureson}
+  ]
+  localStorage.setItem('userdata',JSON.stringify(userdate));
+    
+     
+
+    
+
+     window.location='Demo.html';
+
+    
 }
 
 function services1() {
@@ -120,14 +113,24 @@ window.addEventListener("scroll", () => {
     const Pages =document.getElementById('Pages');
     const Testimonials =document.getElementById('Testimonials');
     const animation =document.getElementById('card-1');
+    const header = document.querySelector('header');
     let curScroll = window.pageYOffset;
 
-      if (curScroll >= 720 && curScroll <= 950) {
+      if(curScroll==0){
+        header.classList.remove('scrolled');
+
+      }
+      else if(curScroll==10){
+        header.classList.add('scrolled');
+
+      }
+      else if (curScroll >= 720 && curScroll <= 950) {
         Services.classList.add('active');
         Home.classList.remove('active');
       
        
-      } else if (curScroll >= 1820 && curScroll <= 2065 ) {
+      }
+       else if (curScroll >= 1820 && curScroll <= 2065 ) {
         Services.classList.remove('active');
         Home.classList.remove('active');
         About.classList.add('active');4
