@@ -1,9 +1,17 @@
 let userObject= JSON.parse(localStorage.getItem('userdata'));
-console.log(userObject);
+console.log(userObject[0].name);
 
-const resultDiv = document.getElementById("result");
-resultDiv.textContent = `
-    <p>Name: ${userObject.name}</p>
-    <p>Age: ${userObject.id}</p>
-    <p>Email: ${userObject.email}</p>
-`;
+let name1 = document.getElementById('name');
+let email=document.getElementsByClassName('email');
+let sub=document.getElementsByClassName('sub');
+let reson=document.getElementsByClassName('reson');
+
+if (userObject && userObject.length > 0) {
+  let uname =userObject[0].name;
+  name1.innerText=uname;
+}
+else{
+    console.log("no data");
+}
+
+

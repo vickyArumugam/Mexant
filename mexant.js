@@ -8,6 +8,31 @@ document.addEventListener('scroll',()=>{
     }
 
 });
+
+// arrow click
+   function left_Arrow(value) {
+    let slider =document.getElementById('1');
+    let header_text=document.getElementsByClassName('header_text');
+    slider.classList.add('background_img2');
+    slider.classList.remove('background_img3');
+    header_text.classList.add('header_textanimi');
+   }
+
+   function right_Arrow(value) {
+    let slider =document.getElementById('1');
+    let header_text=document.getElementsByClassName('header_text');
+    slider.classList.add('background_img3');
+    slider.classList.remove('background_img2');
+    header_text.classList.add('header_textanimi');
+
+   }
+
+  //  svg animation
+  function svg_animi() {
+    let hover =document.getElementsByClassName('card');
+    hover.classList.add('.card svg:hover');
+
+  }
 // dropdown
 
  function dropdown(){
@@ -22,8 +47,6 @@ function dropdown1(){
 }
 
 
-// change color in li
-
 // get details
 function getDetails() {
     let uname=document.getElementById('name').value;
@@ -34,15 +57,8 @@ function getDetails() {
   let userdate=[
     {id:1,name:uname,email:uemail,sub:usub,reson:ureson}
   ]
-  localStorage.setItem('userdata',JSON.stringify(userdate));
-    
-     
-
-    
-
+  localStorage.setItem('user',JSON.stringify(userdate));
      window.location='Demo.html';
-
-    
 }
 
 function services1() {
@@ -110,7 +126,6 @@ window.addEventListener("scroll", () => {
     const Home =document.getElementById('Home');
     const Services =document.getElementById('Services');
     const About =document.getElementById('About');
-    const Pages =document.getElementById('Pages');
     const Testimonials =document.getElementById('Testimonials');
     const animation =document.getElementById('card-1');
     const header = document.querySelector('header');
@@ -118,17 +133,13 @@ window.addEventListener("scroll", () => {
 
       if(curScroll==0){
         header.classList.remove('scrolled');
-
       }
       else if(curScroll==10){
         header.classList.add('scrolled');
-
       }
       else if (curScroll >= 720 && curScroll <= 950) {
         Services.classList.add('active');
         Home.classList.remove('active');
-      
-       
       }
        else if (curScroll >= 1820 && curScroll <= 2065 ) {
         Services.classList.remove('active');
@@ -142,9 +153,6 @@ window.addEventListener("scroll", () => {
         Testimonials.classList.add('active');
         animation.style.animation='faderight 0.5s linear forwards';
         // animation
-
-
-
       }
      
   });

@@ -3,16 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo</title>
-    <script src="/demo.js"></script>
-
+    <title>User Data Display</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        
+        }
+        
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 40%;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
 </head>
 <body>
-    
- 
-    <div id="result"></div>
-  
+    <div class="container">
+        <h1 class="name">User Name</h1>
+        <p class="email">User Email</p>
+        <p class="sub">User Subject</p>
+        <p class="reson">User Reason</p>
+        <button id="loadDataButton">Load User Data</button>
+        <button onclick="backPage()">backPage</button>
+    </div>
+    <!-- <script src="script.js"></script> -->
+     <script>
+      
 
-    
+// Function to load user data
+document.getElementById('loadDataButton').addEventListener('click', () => {
+    let userObject = JSON.parse(localStorage.getItem('userdata'));
+
+    console.log(userObject[0].name);
+
+    if ( userObject && userObject.length > 0) {
+        document.getElementsByClassName('name')[0].innerText = userObject[0].name;
+        document.getElementsByClassName('email')[0].innerText = `Email: ${userObject[0].email}`;
+        document.getElementsByClassName('sub')[0].innerText = `Subject: ${userObject[0].sub}`;
+        document.getElementsByClassName('reson')[0].innerText = `Reason: ${userObject[0].reson}`;
+    } else {
+        console.log('No user data found.');
+    }
+});
+
+  function backPage() {
+    localStorage.clear();
+    window.location.href='index.html';
+  }
+     </script>
 </body>
 </html>

@@ -75,6 +75,15 @@ img .down_arrow {
 	background-size: cover;
 	background-position: center;
 }
+.background_img2 {
+    background-image: url('img/slide-02.jpg'); 
+	animation: back-ground 1.5s ease;
+}
+.background_img3 {
+    background-image: url('img/slide-03.jpg');
+	animation: back-ground 1.5s ease;
+}
+
 
 .silder h1 {
 	font-size: 56px;
@@ -112,6 +121,9 @@ img .down_arrow {
 	width: 59%;
 	position: relative;
 	animation: fade-right 1s ease-in;
+}
+.header_textanimi {
+	animation: fade-right1 1s ease-in;
 }
 
 @keyframes fade-right {
@@ -188,6 +200,18 @@ h1 span {
 
 .btn :last-child {
 	margin-left: 16px;
+}
+
+.left_arrow {
+	position: absolute;
+	top: 43%;
+	left: 95.5%;
+}
+.right_arrow {
+	position: absolute;
+	top: 46%;
+	right: 95.5%;
+
 }
 
 /* slider end */
