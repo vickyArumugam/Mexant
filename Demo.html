@@ -23,7 +23,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 40%;
+            width: 20%;
             text-align: center;
         }
         
@@ -49,24 +49,17 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="name">User Name</h1>
-        <p class="email">User Email</p>
-        <p class="sub">User Subject</p>
-        <p class="reson">User Reason</p>
-        <button id="loadDataButton">Load User Data</button>
+        <h1 class="name"></h1>
+        <p class="email"></p>
+        <p class="sub"></p>
+        <p class="reson"></p>
         <button onclick="backPage()">backPage</button>
     </div>
-    <!-- <script src="script.js"></script> -->
+
      <script>
-      
+    let userObject = JSON.parse(localStorage.getItem('user'));
 
-// Function to load user data
-document.getElementById('loadDataButton').addEventListener('click', () => {
-    let userObject = JSON.parse(localStorage.getItem('userdata'));
-
-    console.log(userObject[0].name);
-
-    if ( userObject && userObject.length > 0) {
+    if (userObject && userObject.length > 0) {
         document.getElementsByClassName('name')[0].innerText = userObject[0].name;
         document.getElementsByClassName('email')[0].innerText = `Email: ${userObject[0].email}`;
         document.getElementsByClassName('sub')[0].innerText = `Subject: ${userObject[0].sub}`;
@@ -74,12 +67,12 @@ document.getElementById('loadDataButton').addEventListener('click', () => {
     } else {
         console.log('No user data found.');
     }
-});
 
   function backPage() {
     localStorage.clear();
     window.location.href='index.html';
   }
+
      </script>
 </body>
 </html>

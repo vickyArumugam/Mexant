@@ -12,19 +12,14 @@ document.addEventListener('scroll',()=>{
 // arrow click
    function left_Arrow(value) {
     let slider =document.getElementById('1');
-    let header_text=document.getElementsByClassName('header_text');
-    slider.classList.add('background_img2');
     slider.classList.remove('background_img3');
-    header_text.classList.add('header_textanimi');
+    console.log("left");
    }
 
    function right_Arrow(value) {
     let slider =document.getElementById('1');
-    let header_text=document.getElementsByClassName('header_text');
-    slider.classList.add('background_img3');
     slider.classList.remove('background_img2');
-    header_text.classList.add('header_textanimi');
-
+    console.log("right");
    }
 
   //  svg animation
@@ -70,6 +65,8 @@ function services1() {
     table_WebDesign.style.visibility='visible';
     table_Graphics.style.visibility='hidden';
     table_WebCoding.style.visibility='hidden';
+    // table_Graphics.style.opacity='0';
+    // table_WebCoding.style.opacity='0';
     // btn color
     const button1=document.getElementById('btn-1');
     const button2=document.getElementById('btn-2');
@@ -151,11 +148,55 @@ window.addEventListener("scroll", () => {
         Home.classList.remove('active');
         About.classList.remove('active');
         Testimonials.classList.add('active');
-        animation.style.animation='faderight 0.5s linear forwards';
+        // animation.style.animation='faderight 0.5s linear forwards';
         // animation
       }
      
   });
+
+
+  //card movieing
+
+  let currentIndex = 0;
+const cards = document.querySelectorAll('.swiper_card');
+const totalCards = 3;
+// console.log(totalCards);
+
+
+function showSlide(index) {
+    currentIndex = index;
+    const slides = document.querySelector('.parent-card');
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateDots();
+    
+}
+
+
+
+
+function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+
+    });
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalCards;
+    showSlide(currentIndex);
+}
+
+function currentSlide(index) {
+    showSlide(index);
+}
+
+// Auto slide every 3 seconds
+setInterval(nextSlide, 2000);
+
+// Initial display
+showSlide(currentIndex);
 
 
 

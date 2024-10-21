@@ -6,7 +6,13 @@
       <title>MEXANT</title>
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
       <script src="mexant.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
    </head>
    <body>
       <!-- navbar start -->
@@ -36,9 +42,9 @@
       <!-- silder start -->
       <section class="silder" id="1">
          <div class="header_text">
-            <h1>Get<span> ready</span> for your business</h1>
+            <h1 class="header_text-h1">Get<span> ready</span> for your business</h1>
             <br>
-            <h1>& upgrade <span>all aspects</span></h1>
+            <h1 class="header_text-h1">& upgrade <span>all aspects</span></h1>
             <div class="line" id="line"></div>
             <p>Mexant HTML5 Template is provided for free of charge. This layout is based on Boostrap 5 CSS framework. Anyone can download and edit for any professional website. Thank you for visiting TemplateMo website.
             </p>
@@ -46,12 +52,12 @@
                <button type="button" class="green_btn">Discover more</button>
                <button type="button" class="orange_btn">Contact Us</button>
             </div>
-            <div class="left_arrow" onclick="left_Arrow(2)">
+            <div class="left_arrow" onclick="right_Arrow(2)">
                <svg  fill="#fff" height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-171.6 -171.6 673.20 673.20" xml:space="preserve" transform="rotate(90)" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="XMLID_93_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,
                   21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"></path> </g>
                </svg>
             </div>
-            <div class="right_arrow" onclick="right_Arrow(1)">
+            <div class="right_arrow" onclick="left_Arrow(1)">
                <svg   fill="#fff" height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-171.6 -171.6 673.20 673.20" xml:space="preserve" transform="rotate(90)matrix(1, 0, 0, -1, 0, 0)" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="XMLID_93_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,
                   21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"></path> </g>
                </svg>
@@ -306,32 +312,66 @@
             <h4>Testimonials</h4>
             <h1>What They Say</h1>
          </div>
-         <div class="swiper_card">
-            <div class="test-slider" id="card-1">
-               <div class="test-card">
-                  <i class="fa fa-quote-left"></i>
-                  <p>“Etiam id ligula risus. Fusce fringilla nisl nunc, nec rutrum lectus cursus nec. In blandit nibh dolor,
-                     at rutrum leo accumsan porta. Nullam pulvinar eros porttitor risus condimentum tempus.”
-                  </p>
-                  <h4>Andrew Garfield</h4>
-                  <span>CTO of Mexant</span>
+         <div class="parent-card">
+            <div class="swiper_card">
+               <div class="test-slider" id="card-1">
+                  <div class="test-card">
+                     <i class="fa fa-quote-left"></i>
+                     <p>“Etiam id ligula risus. Fusce fringilla nisl nunc, nec rutrum lectus cursus nec. In blandit nibh dolor,
+                        at rutrum leo accumsan porta. Nullam pulvinar eros porttitor risus condimentum tempus.”
+                     </p>
+                     <h4>Andrew Garfield</h4>
+                     <span>CTO of Mexant</span>
+                  </div>
+                  <div class="test-left">
+                     <img src="/img/testimonials-01.jpg" alt="">
+                  </div>
                </div>
-               <div class="test-left">
-                  <img src="/img/testimonials-01.jpg" alt="">
+            </div>
+            <div class="swiper_card">
+               <div class="test-slider" id="card-2">
+                  <div class="test-card">
+                     <i class="fa fa-quote-left"></i>
+                     <p>“Etiam id ligula risus. Fusce fringilla nisl nunc, nec rutrum lectus cursus nec. In blandit nibh dolor,
+                        at rutrum leo accumsan porta. Nullam pulvinar eros porttitor risus condimentum tempus.”
+                     </p>
+                     <h4>Andrew Garfield</h4>
+                     <span>CTO of Mexant</span>
+                  </div>
+                  <div class="test-left">
+                     <img src="/img/testimonials-01.jpg" alt="">
+                  </div>
+               </div>
+            </div>
+            <div class="swiper_card">
+               <div class="test-slider" id="card-3">
+                  <div class="test-card">
+                     <i class="fa fa-quote-left"></i>
+                     <p>“Etiam id ligula risus. Fusce fringilla nisl nunc, nec rutrum lectus cursus nec. In blandit nibh dolor,
+                        at rutrum leo accumsan porta. Nullam pulvinar eros porttitor risus condimentum tempus.”
+                     </p>
+                     <h4>Andrew Garfield</h4>
+                     <span>CTO of Mexant</span>
+                  </div>
+                  <div class="test-left">
+                     <img src="/img/testimonials-01.jpg" alt="">
+                  </div>
                </div>
             </div>
          </div>
-         <div class="dots">
-            <button class="owl-dot">
-            <span></span>
-            </button>
-            <button class="owl-dot">
-            <span></span>
-            </button>
-            <button class="owl-dot">
-            <span></span>
-            </button>
+         <div class="white-secL">
+            
          </div>
+         <div class="white-secR">
+            
+         </div>
+       
+         <div class="pagination">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+
+        </div>
       </section>
       <section class="partners">
          <img src="/img/client-01.png" alt="img">

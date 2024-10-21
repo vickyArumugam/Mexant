@@ -16,6 +16,7 @@ header {
 	top: 0px;
 	z-index: 1;
 	transition: background-color 0.4s ease-in-out;
+	cursor: grab;
 
 }
 
@@ -74,16 +75,22 @@ img .down_arrow {
 	top: 0%;
 	background-size: cover;
 	background-position: center;
+	cursor: grab;
+	transition-duration: 2s;
 }
 .background_img2 {
     background-image: url('img/slide-02.jpg'); 
-	animation: back-ground 1.5s ease;
+	transition-duration: 0.5s;
+	
 }
 .background_img3 {
     background-image: url('img/slide-03.jpg');
-	animation: back-ground 1.5s ease;
+	transition-duration: 0.5s;
+	
 }
-
+.header_text-h1 {
+	animation: fade-left 1s ease-in;
+}
 
 .silder h1 {
 	font-size: 56px;
@@ -91,18 +98,15 @@ img .down_arrow {
 	font-weight: bold;
 	margin: 0;
 	position: relative;
-	animation: fade-left 1s ease-in;
+	/* animation: fade-left 1s ease-in; */
 }
 
 @keyframes fade-left {
 	50% {
-		/* left: -300px; */
 		right: 500px;
-
 	}
 
 	100% {
-		/* left: 300px; */
 		right: 0px;
 	}
 }
@@ -252,7 +256,7 @@ h1 span {
 
 }
 
-.card svg:hover {
+.card:hover .fa-archive {
 	transform: translateY(20px);
 }
 
@@ -385,11 +389,13 @@ tr {
 
 @keyframes fade {
 	0% {
-		left: -100px;
+		right:800px;
+		opacity: 0;
 	}
 
 	100% {
-		left: 270px;
+		right: 950px;
+		opacity: 1;
 	}
 
 }
@@ -484,6 +490,7 @@ form {
 	align-items: center;
 	margin-top: 50px;
 	gap: 30px;
+	position: relative;
 }
 
 .test-heading {
@@ -505,13 +512,39 @@ form {
 	text-transform: capitalize;
 	color: #212741;
 }
+.parent-card{
+	display: flex;
+	align-items: center;
+	width: 54%;
+	height: 500px;
+	gap: 50px;
+
+}
 
 .swiper_card {
 	display: flex;
 	justify-content: center;
-	position: relative;
-	z-index: 1;
-	margin-left: 47%;
+	z-index: -1;
+	
+}
+
+.white-secL{
+	width: 23%;
+	height: 500px;
+	background-color: #fff;
+	position: absolute;
+	top: 20%;
+	left: 0%;
+
+}
+.white-secR{
+	width: 22.5%;
+	height: 500px;
+	background-color: #fff;
+	position: absolute;
+	top: 20%;
+	right: 0%;
+
 }
 
 .test-slider {
@@ -520,7 +553,7 @@ form {
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 	display: flex;
 	border-radius: 15px;
-	position: relative;
+	/* position: relative; */
 }
 
 @keyframes faderight {
@@ -569,14 +602,24 @@ form {
 	color: #43ba7f;
 	font-weight: 700;
 }
+.pagination {
+	text-align: center;
+	margin-top: 10px;
+}
 
-.owl-dot {
+.dot {
+	display: inline-block;
 	width: 10px;
 	height: 10px;
-	background-color: #ffa88c;
+	margin: 0 5px;
 	border-radius: 50%;
-	margin: 0px 4px;
-	border: none;
+	background: #ffa88c;
+	cursor: pointer;
+	transition: back-ground 0.3s;
+}
+
+.dot.active {
+	background: #ff511a;
 }
 
 /* partners */
@@ -646,10 +689,6 @@ form {
 
 /* dropdown */
 
-#card-2 {
-	display: none;
-}
 
-#card-3 {
-	display: none;
-}
+
+
